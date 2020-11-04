@@ -1,0 +1,10 @@
+{
+    "host": "http://localhost",
+    "port": 3000,
+    "user": "BankinUser",
+    "password": "12345678",
+    "authorization": {
+        "clientId": "BankinClientId",
+        "password": "secret"
+    }
+}
