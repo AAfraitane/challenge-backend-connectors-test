@@ -11,7 +11,15 @@ const getAllTransactionsByAcount = async (accessToken, accountId) => {
         continuePagination = !!paginatedTransations.link.next;
         page++;
     }
-    return allTransactions;
+    const uniqueArray = [];
+    const uniqueArrayString = [];
+    allTransactions.forEach((acc) => {
+        if (!uniqueArrayString.includes(JSON.stringify(acc))) {
+            uniqueArray.push(acc);
+            uniqueArrayString.push(JSON.stringify(acc));
+        }
+    });
+    return uniqueArray;
 }
 
 const getPaginatedTransactions = async (accessToken, accountId, page) => {
